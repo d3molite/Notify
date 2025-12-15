@@ -17,11 +17,11 @@ GatewayIntents.GuildMembers
 GatewayIntents.GuildVoiceStates
 
 ### guild_id
-The snowflake ulong id of your guild. 
-You can get this by enabling developer mode in the discord settings, right-clicking your guild and select the option "Copy Server ID" 
+The snowflake ulong id of your server. 
+You can get this by enabling developer mode in the discord settings, right-clicking your server icon and select the option "Copy Server ID" 
 
 ### voice_channel_ids
-An array of voice channel ids you want monitored. You can obtain those in the same way as with the guild id by right clicking your voice channels.
+An array of voice channel ids you want monitored. You can obtain those in the same way as with the guild id by right-clicking your voice channels.
 
 ### notify_role_id 
 A role you want pinged. You can get the role id by right-clicking it in the role settings of your guild and selecting "Copy Role ID".

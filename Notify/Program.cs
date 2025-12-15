@@ -1,9 +1,11 @@
 ﻿using System.Text.Json;
 using Discord;
 using Discord.WebSocket;
-using Notify.config;
 using Notify.Models;
 using Notify.Modules;
+
+if (!Directory.Exists("./config"))
+	Directory.CreateDirectory("./config");
 
 if (!File.Exists("./config/config.json"))
 	await File.WriteAllTextAsync("./config/config.json", ConfigExample.JsonText);

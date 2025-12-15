@@ -1,6 +1,6 @@
-namespace Notify.config;
+namespace Notify.Models;
 
-public class ConfigExample
+public static class ConfigExample
 {
 	public const string JsonText = @"
 	{
