@@ -1,8 +1,9 @@
 ﻿services:
   notify:
-    image: notify
+    image: demolite/notify
+    restart: always
     build:
       context: .
       dockerfile: Notify/Dockerfile
     volumes:
-      - ./config:./config
+      - "./config/:/app/config/"
