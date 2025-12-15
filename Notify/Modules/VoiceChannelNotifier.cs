@@ -18,16 +18,16 @@ public class VoiceChannelNotifier(Config config, DiscordSocketClient client)
 
 		// if the user was not in a voice and joins a voice channel
 		if (oldState.VoiceChannel is null && IsInMonitored(newState.VoiceChannel.Id))
-			await Notify(newState.VoiceChannel.Id);
+			await Notify(newState.VoiceChannel.Id, user);
 	}
 
-	private async Task Notify(ulong voiceChannelId)
+	private async Task Notify(ulong voiceChannelId, SocketUser user)
 	{
 		var guild = client.GetGuild(config.GuildId);
 		var channel = guild.GetTextChannel(config.NotifyChannelId);
 
 		await channel.SendMessageAsync(
-			$"<@&{config.NotifyRoleId}> someone has joined <#{voiceChannelId}>!",
+			$"<@&{config.NotifyRoleId}>: {user.Username} has joined <#{voiceChannelId}>!",
 			allowedMentions: AllowedMentions.All
 		);
 	}
